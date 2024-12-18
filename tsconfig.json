@@ -6,6 +6,7 @@
     "baseUrl": ".",
     "paths": {
       "@cyan/*": ["cyan-next/src/*"],
+      "@components/*": ["src/components/*"],
     }
   }
 }

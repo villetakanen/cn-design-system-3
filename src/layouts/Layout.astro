@@ -1,4 +1,5 @@
 ---
+import Rail from "src/components/base/Rail.astro";
 import BaseHead from "../components/base/BaseHead.astro";
 
 const { title: propTitle } = Astro.props;
@@ -7,8 +8,9 @@ const title = propTitle || "Cyan Design System";
 
 <!doctype html>
 <html lang="en">
-	<BaseHead title={title} />
-	<body>
+  <BaseHead title={title} />
+  <body>
+    <Rail />
 		<slot />
 	</body>
 </html>
