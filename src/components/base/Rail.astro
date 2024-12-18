@@ -1,0 +1,65 @@
+---
+type RailItem = {
+  label?: string;
+  href: string;
+  icon: string;
+};
+
+const rail: Array<RailItem> = [
+  {
+    href: '/',
+    icon: 'd20',
+  },
+  /*{
+    href: '/principles',
+    icon: 'tokens',
+    label: 'Principles',
+  },
+  {
+    href: '/layout',
+    icon: 'layout',
+    label: 'Layout',
+  },
+  {
+    href: '/inputs',
+    icon: 'gamepad',
+    label: 'inputs',
+  },
+  {
+    href: '/theming',
+    icon: 'palette',
+    label: 'Theming',
+  },
+  {
+    href: '/elements',
+    icon: 'components',
+    label: 'Components',
+  },
+  {
+    href: '/css',
+    icon: 'css',
+    label: 'CSS',
+  },
+  {
+    href: '/addons',
+    icon: 'experiment',
+    label: 'Addons',
+  },*/
+];
+---
+
+<nav class="rail">
+  {
+    rail.map((item) => {
+      return (
+        <a href={item.href}>
+          <cn-navigation-icon
+            noun={item.icon}
+            label={item.label}
+            active={Astro.url.pathname === item.href ? 'true' : undefined}
+          />
+        </a>
+      );
+    })
+  }
+</nav>
