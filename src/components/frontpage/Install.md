@@ -15,8 +15,8 @@ Alternatively, you can use the GitHub repository as a subrepo, like this
 
 The Design System expects to use Lato (headings) and Open Sans (body) from Google fonts.
 
-A fallback to Tailwinf CSS's default font stack is provided for both, and the font stack
-suggested by the Tailwinf CSS is used for the monospace font.
+A fallback to Tailwind CSS's default font stack is provided for both, and the font stack
+suggested by the Tailwind CSS is used for the monospace font.
 
 ```html
 <!-- Google fonts for Cyan-->

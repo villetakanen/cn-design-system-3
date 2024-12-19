@@ -1,10 +1,10 @@
 ---
-import Layout from '@layouts/Layout.astro';
-import { getCollection } from 'astro:content';
+import { getCollection } from "astro:content";
+import Layout from "@layouts/Layout.astro";
 
 // Get all entries from a collection.
 // Requires the name of the collection as an argument.
-const allAddons = await getCollection('addons');
+const allAddons = await getCollection("addons");
 const size = allAddons.length;
 ---
 <Layout>

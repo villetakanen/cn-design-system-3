@@ -1,0 +1,29 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@layouts/Layout.astro";
+
+// Get all entries from a collection.
+// Requires the name of the collection as an argument.
+const allPrinciples = await getCollection("principles");
+const size = allPrinciples.length;
+---
+<Layout>
+  <main>
+	<div class="content-columns">
+	  <article class="column-l">
+       <h1>Principles</h1>
+       
+       {allPrinciples.map((principle) => (
+         <p>
+            <a href={`/principles/${principle.id}`}>
+              <cn-icon small noun={principle.data.icon}></cn-icon>
+              {principle.data.title}
+            </a>
+         </p>
+       ))}
+
+        <p>{size} pages.</p>
+      </article>
+    </div>
+  </main>
+</Layout>

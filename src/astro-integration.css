@@ -1,11 +1,11 @@
 /**
  * Astro Integration CSS
- * 
+ *
  * This file contains the CSS to style the components and elements provided by the Astro
- * 
+ *
  * @since 2.0.0
  */
- .astro-code {
-    padding: var(--cn-grid);
-    margin: var(--cn-grid) 0;
-  }
+.astro-code {
+	padding: var(--cn-grid);
+	margin: var(--cn-grid) 0;
+}
