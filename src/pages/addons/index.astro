@@ -1,0 +1,28 @@
+---
+import Layout from '@layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+// Get all entries from a collection.
+// Requires the name of the collection as an argument.
+const allAddons = await getCollection('addons');
+const size = allAddons.length;
+---
+<Layout>
+  <main>
+	<div class="content-columns">
+	  <article class="column-l">
+       <h1>Adddons</h1>
+       
+       <p>{size}</p>
+
+       {allAddons.map((addon) => (
+         <div>
+           <h2>{addon.data.title}</h2>
+           <p>{addon.data.description}</p>
+           <p><a href={`/addons/${addon.id}`}>Docs</a></p>
+         </div>
+       ))}
+      </article>
+    </div>
+  </main>
+</Layout>

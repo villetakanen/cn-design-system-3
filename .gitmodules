@@ -1,3 +1,6 @@
 [submodule "cyan-next"]
 	path = cyan-next
 	url = https://github.com/11thdeg/cyan-next.git
+[submodule "cn-dice"]
+	path = cn-dice
+	url = https://github.com/villetakanen/cn-dice.git
