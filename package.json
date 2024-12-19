@@ -6,7 +6,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "check": "biome check --write src"
   },
   "dependencies": {
     "astro": "^5.0.9",
@@ -14,6 +15,7 @@
     "turndown": "^7.2.0"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.9.4",
     "rollup-plugin-visualizer": "^5.12.0",
     "sass": "^1.83.0"
   }
