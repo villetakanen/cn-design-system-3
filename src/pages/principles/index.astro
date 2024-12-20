@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
+import IconList from "@components/principles/IconList.astro";
 
 // Get all entries from a collection.
 // Requires the name of the collection as an argument.
@@ -12,7 +13,7 @@ const size = allPrinciples.length;
 	<div class="content-columns">
 	  <article class="column-l">
        <h1>Principles</h1>
-       
+
        {allPrinciples.map((principle) => (
          <p>
             <a href={`/principles/${principle.id}`}>

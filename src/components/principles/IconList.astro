@@ -1,0 +1,20 @@
+---
+const iconsFiles = await Astro.glob('/public/icons/*.svg');
+
+// the file src looks something like "/@fs/Users/vtak/Dev/cyan-design-system/public/icons/add.svg"
+// We want to take just the name, like "add"
+const icons = iconsFiles.map((file) => {
+  if (!file.default.src) return;
+  const parts = file.default.src.split('/');
+  const filename = parts[parts.length - 1];
+  const noun = filename.split('.')[0];
+  return noun;
+});
+---
+<div class="flex">
+{icons.map(noun => (
+  <figure>
+    <cn-icon noun={noun}></cn-icon>
+    <figcaption>{noun}</figcaption>
+  </figure>
+))}
