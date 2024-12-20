@@ -38,7 +38,9 @@ Additionally, we provide some surface tokens with prefix `--surface-` that are u
 
 #### Contrast and accessibility
 
-<div class="grid-2">
+We have 5 levels of "elevation" for the surfaces in the app, and we use the `--color-on-surface` token to set the text color on top of the surface color. Here are some examples of the text colors on top of the different surfaces (light and dark modes):
+
+<div class="grid two-cols">
   <div class="light p-2" style="background: var(--color-surface)">
     <p>Elevation [0], text on surface</p>
     <p class="text-high">High emphasis text on surface</p>
