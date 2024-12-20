@@ -6,6 +6,7 @@ const principles = defineCollection({
 	schema: z.object({
 		title: z.string(),
 		icon: z.string(),
+		multipart: z.boolean().optional(),
 	}),
 });
 

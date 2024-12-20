@@ -16,6 +16,7 @@ interface Props {
 		data: {
 			title: string;
 			icon: string;
+			multipart?: boolean;
 		};
 	};
 }
@@ -25,9 +26,11 @@ const { Content } = await render(post);
 <Layout>
   <main>
 	<div class="content-columns">
-	  <article class="column-l">
-         <Content />
-       </article>
-    </div>
+	  { !post.data.multipart ? <article class="column-l">
+          <Content />
+        </article> :
+	    <Content />
+	  }
+	</div>
   </main>
 </Layout>
