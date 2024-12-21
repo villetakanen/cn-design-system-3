@@ -61,3 +61,71 @@ Normal text, and some filler content.
 <h4 class="text-body">A H4 element with the `.text-body` class</h4>
 
 </article>
+
+<article>
+
+## Lists
+
+Lists inherit the base text styles and support either loose (default) or `.compact` spacing.
+
+### Examples
+
+#### Unordered List
+
+* An unordered list
+* <span class="text-high">With some items, this one being high emphasis.</span>
+
+#### Ordered List
+
+1. An ordered list
+2. <span class="text-low">With some items, this one being low emphasis.</span>
+
+#### Compact Unordered List
+
+<ol class="compact">
+  <li>A compact ordered list</li>
+  <li>With some items</li>
+</ol>
+
+</article>
+
+<article>
+
+## Tables
+
+Please note: tables are intended for tabular data, not for layout. For layout, we provide a set of grid helpers
+and layout containers.
+
+Tables use the token `--color-surface-[+1]` as a highlight color for borders and headers. F.ex `--color-surface-1` for 
+the first surface color, `--color-surface-2` on top of `.elevation-1` for the second surface color, etc.
+
+### Examples
+
+| Header 1 | Header 2 | Header 3 |
+| --- | --- | --- |
+| Row 1, Cell 1 | Row 1, Cell 2 | Row 1, Cell 3 |
+| Row 2, Cell 1 | Row 2, Cell 2 | Row 2, Cell 3 |
+
+<div class="elevation-1 p-1">
+
+| Header 1 | Header 2 | Header 3 |
+| --- | --- | --- |
+| Row 1, Cell 1 | Row 1, Cell 2 | Row 1, Cell 3 |
+
+</div>
+
+<div class="elevation-2 p-1">
+
+| Header 1 | Header 2 | Header 3 |
+| --- | --- | --- |
+| Row 1, Cell 1 | Row 1, Cell 2 | Row 1, Cell 3 |
+
+</div>
+
+<div class="elevation-3 p-1">
+
+| Header 1 | Header 2 | Header 3 |
+| --- | --- | --- |
+| Row 1, Cell 1 | Row 1, Cell 2 | Row 1, Cell 3 |
+
+</article>
