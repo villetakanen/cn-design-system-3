@@ -34,3 +34,30 @@ rounding discrepancies between the scale and the actual font sizes used in the d
       <h4 class="m-0 downscaled" style="border-left: 4px solid var(--chroma-primary-80); padding-left: var(--cn-grid)"> Downscaled 4</h4>
     </div>
     </article>
+
+<article>
+
+## Text
+
+We set the base text styles at `body` and override them as needed. 
+
+The style can be forced to a non _body element_ by using the `.text-body` class.
+
+### Styling Text
+
+| Class | Description |
+| --- | --- |
+| `.text-high` | High emphasis text, used where text needs to stand out |
+| `.text-low` | Low emphasis text, used where text needs to be less prominent |
+
+### Examples
+
+<p class="text-high">High emphasis text, used where text needs to stand out</p>
+
+Normal text, and some filler content.
+
+<p class="text-low">Low emphasis text, used where text needs to be less prominent</p>
+
+<h4 class="text-body">A H4 element with the `.text-body` class</h4>
+
+</article>
