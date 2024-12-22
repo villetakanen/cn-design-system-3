@@ -1,13 +1,15 @@
 ---
+import AppBar from "@components/base/AppBar.astro";
 import Rail from "src/components/base/Rail.astro";
 import BaseHead from "../components/base/BaseHead.astro";
 
 const { title: propTitle } = Astro.props;
-const title = propTitle || "Cyan Design System";
+const title = propTitle || "Cyan Design System, Book 3";
 ---
 
 <!doctype html>
 <html lang="en">
+  <AppBar title={title} />
   <BaseHead title={title} />
   <body>
     <Rail />
