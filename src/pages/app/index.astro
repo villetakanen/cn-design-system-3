@@ -4,20 +4,22 @@ import Layout from "@layouts/Layout.astro";
 
 // Get all entries from a collection.
 // Requires the name of the collection as an argument.
-const allPrinciples = await getCollection("principles");
-const size = allPrinciples.length;
+const allAppComps = await getCollection("app");
+const size = allAppComps.length;
 ---
 <Layout>
   <main>
 	<div class="content-columns">
 	  <article class="column-l">
-       <h1>Principles</h1>
+       <h1>App</h1>
 
-       {allPrinciples.map((principle) => (
+       <p>These native and web components are used to create the look and feel of the Application.</p>
+
+       {allAppComps.map((comp) => (
          <p>
-            <a href={`/principles/${principle.id}`}>
-              <cn-icon small noun={principle.data.icon}></cn-icon>
-              {principle.data.title}
+            <a href={`/app/${comp.id}`}>
+              <cn-icon small noun={comp.data.icon}></cn-icon>
+              {comp.data.title}
             </a>
          </p>
        ))}

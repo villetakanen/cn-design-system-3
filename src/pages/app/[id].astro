@@ -1,0 +1,36 @@
+---
+import { getCollection, render } from "astro:content";
+import Layout from "@layouts/Layout.astro";
+
+// 1. Generate a new path for every collection entry
+export async function getStaticPaths() {
+	const posts = await getCollection("app");
+	return posts.map((post) => ({
+		params: { id: post.id },
+		props: { post },
+	}));
+}
+
+interface Props {
+	post: {
+		data: {
+			title: string;
+			icon: string;
+			multipart?: boolean;
+		};
+	};
+}
+const { post } = Astro.props as Props;
+const { Content } = await render(post);
+---
+<Layout>
+  <main>
+	<div class="content-columns">
+	  { !post.data.multipart ? <article class="column-l">
+          <Content />
+        </article> :
+	    <Content />
+	  }
+	</div>
+  </main>
+</Layout>
