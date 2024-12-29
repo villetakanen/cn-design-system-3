@@ -20,7 +20,7 @@ const app = defineCollection({
 });
 
 const addons = defineCollection({
-	loader: glob({ pattern: "**/*.md", base: "./src/books/addons" }),
+	loader: glob({ pattern: "*.{md,mdx}", base: "./src/books/addons" }),
 	schema: z.object({
 		title: z.string(),
 		description: z.string(),
