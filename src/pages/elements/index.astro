@@ -1,0 +1,31 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@layouts/Layout.astro";
+
+// Get all entries from a collection.
+// Requires the name of the collection as an argument.
+const allAppComps = await getCollection("elements");
+const size = allAppComps.length;
+---
+<Layout>
+  <main>
+	<div class="content-columns">
+	  <article class="column-l">
+       <h1>Custom Elements</h1>
+
+       <p>Web Components provided by the Design System Core.</p>
+
+       {allAppComps.map((comp) => (
+         <p>
+            <a href={`/elements/${comp.id}`}>
+              <cn-icon small noun={comp.data.icon}></cn-icon>
+              {comp.data.title}
+            </a>
+         </p>
+       ))}
+
+        <p>{size} pages.</p>
+      </article>
+    </div>
+  </main>
+</Layout>
