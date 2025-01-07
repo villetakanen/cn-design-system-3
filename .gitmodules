@@ -10,3 +10,6 @@
 [submodule "cn-image-display"]
 	path = cn-image-display
 	url = https://github.com/villetakanen/cn-image-display.git
+[submodule "cn-story-clock"]
+	path = cn-story-clock
+	url = https://github.com/villetakanen/cn-story-clock.git

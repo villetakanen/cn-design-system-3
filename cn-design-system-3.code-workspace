@@ -5,6 +5,18 @@
 		},
 		{
 			"path": "cyan-next"
+		},
+		{
+			"path": "cn-dice"
+		},
+		{
+			"path": "cn-editor"
+		},
+		{
+			"path": "cn-image-display"
+		},
+		{
+			"path": "cn-story-clock"
 		}
 	],
 	"settings": {}
