@@ -7,6 +7,9 @@
 [submodule "cn-editor"]
 	path = cn-editor
 	url = https://github.com/villetakanen/cn-editor.git
-[submodule "cn-image-display"]
-	path = cn-image-display
-	url = https://github.com/villetakanen/cn-image-display.git
+[submodule "cn-story-clock"]
+	path = cn-story-clock
+	url = https://github.com/villetakanen/cn-story-clock.git
+[submodule "cn-lightbox"]
+	path = cn-lightbox
+	url = https://github.com/villetakanen/cn-lightbox.git
