@@ -11,3 +11,149 @@ A form component that implements a Story Clock - a visual tracking tool originat
 ## Examples
 
 <CnStoryClockExamples />
+
+### PbtA Damage Clock
+
+<div class="grid two-cols">
+<div>
+
+#### Example
+
+<cn-story-clock name="Harm" value="2">
+
+  <cn-tick></cn-tick>
+  <cn-tick ></cn-tick>
+  <cn-tick ></cn-tick>
+
+  <cn-tick size="3"></cn-tick>
+
+  <cn-tick size="3"></cn-tick>
+  
+  <cn-tick size="3"></cn-tick>
+
+</cn-story-clock>
+
+PbtA harm uses a 6 segmet progress clock, where the last three steps are wider than the first three. 
+This is to represent the increasing severity of harm.
+
+</div>
+<div>
+
+#### HTML
+
+```html
+<cn-story-clock name="Harm" value="2">
+
+  <cn-tick></cn-tick>
+  <cn-tick ></cn-tick>
+  <cn-tick ></cn-tick>
+
+  <cn-tick size="3"></cn-tick>
+
+  <cn-tick size="3"></cn-tick>
+  
+  <cn-tick size="3"></cn-tick>
+
+</cn-story-clock>
+```
+</div>
+</div>
+
+
+## Testing Testing
+
+<cn-story-clock value="1">
+  <cn-tick></cn-tick>
+  <cn-tick></cn-tick>
+</cn-story-clock>
+
+<cn-story-clock value="2">
+  <cn-tick></cn-tick>
+  <cn-tick></cn-tick>
+  <cn-tick></cn-tick>
+</cn-story-clock>
+
+<cn-story-clock value="3">
+  <cn-tick></cn-tick>
+  <cn-tick></cn-tick>
+  <cn-tick></cn-tick>
+  <cn-tick></cn-tick>
+</cn-story-clock>
+
+<cn-story-clock value="3">
+  <cn-tick></cn-tick>
+  <cn-tick></cn-tick>
+  <cn-tick></cn-tick>
+  <cn-tick></cn-tick>
+  <cn-tick></cn-tick>
+</cn-story-clock>
+
+<cn-story-clock value="2">
+  <cn-tick></cn-tick>
+  <cn-tick></cn-tick>
+  <cn-tick></cn-tick>
+  <cn-tick></cn-tick>
+  <cn-tick></cn-tick>
+  <cn-tick></cn-tick>
+</cn-story-clock>
+
+<cn-story-clock value="3">
+  <cn-tick></cn-tick>
+  <cn-tick></cn-tick>
+  <cn-tick></cn-tick>
+  <cn-tick></cn-tick>
+  <cn-tick></cn-tick>
+  <cn-tick></cn-tick>
+  <cn-tick></cn-tick>
+</cn-story-clock>
+
+<cn-story-clock value="7">
+  <cn-tick></cn-tick>
+  <cn-tick></cn-tick>
+  <cn-tick></cn-tick>
+  <cn-tick></cn-tick>
+  <cn-tick></cn-tick>
+  <cn-tick></cn-tick>
+  <cn-tick></cn-tick>
+  <cn-tick></cn-tick>
+  <cn-tick></cn-tick>
+  <cn-tick></cn-tick>
+  <cn-tick></cn-tick>
+  <cn-tick></cn-tick>
+</cn-story-clock>
+
+#### Weird Examples
+
+<cn-story-clock value="0">
+  <cn-tick></cn-tick>
+  <cn-tick size="10"></cn-tick>
+</cn-story-clock>
+
+<cn-story-clock value="1">
+  <cn-tick size="4"></cn-tick>
+  <cn-tick size="3"></cn-tick>
+  <cn-tick size="2"></cn-tick>
+  <cn-tick></cn-tick>
+</cn-story-clock>
+
+<cn-story-clock value="2">
+  <cn-tick></cn-tick>
+  <cn-tick size="2"></cn-tick>
+  <cn-tick size="3"></cn-tick>
+  <cn-tick size="6"></cn-tick>
+</cn-story-clock>
+
+<cn-story-clock value="5">
+  <cn-tick></cn-tick>
+  <cn-tick size="2"></cn-tick>
+  <cn-tick size="3"></cn-tick>
+  <cn-tick size="4"></cn-tick>
+  <cn-tick size="5"></cn-tick>
+  <cn-tick size="6"></cn-tick>
+  <cn-tick size="7"></cn-tick>
+  <cn-tick size="8"></cn-tick>
+  <cn-tick size="9"></cn-tick>
+  <cn-tick size="10"></cn-tick>
+  <cn-tick size="11"></cn-tick>
+  <cn-tick size="12"></cn-tick>
+</cn-story-clock>
