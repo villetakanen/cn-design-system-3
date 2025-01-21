@@ -28,6 +28,15 @@ const elements = defineCollection({
 	}),
 });
 
+const css = defineCollection({
+	loader: glob({ pattern: "*.{md,mdx}", base: "./src/books/css" }),
+	schema: z.object({
+		title: z.string(),
+		description: z.string(),
+		readme: z.string().optional(),
+	}),
+});
+
 const addons = defineCollection({
 	loader: glob({ pattern: "*.{md,mdx}", base: "./src/books/addons" }),
 	schema: z.object({
@@ -37,4 +46,4 @@ const addons = defineCollection({
 	}),
 });
 
-export const collections = { addons, app, principles, elements };
+export const collections = { addons, app, principles, elements, css };
