@@ -8,6 +8,37 @@ import CnStoryClockExamples from '../../components/addons/StoryClockExample.astr
 
 A form component that implements a Story Clock - a visual tracking tool originating from tabletop RPGs like Apocalypse World and Blades in the Dark. Story Clocks display progress as segments in a pie chart, filling in wedges as events or actions advance toward completion.
 
+## Installation
+
+The component is available as a source code only:
+https://github.com/villetakanen/cn-story-clock
+
+The source is MIT licensed.
+
+## Props
+
+| Prop | Type | Description |
+| ---- | ---- | ----------- |
+| `name` | string | The name of the clock. |
+| `value` | number | The number of filled segments in the clock |
+| `disabled` | boolean | Disables the clock. |
+| `view` | boolean | Displays the clock without interactivity. |
+
+
+
+## Children
+
+### cn-tick
+
+A child component that represents a segment of the clock.
+
+#### Props
+
+| Prop | Type | Description |
+| ---- | ---- | ----------- |
+| `size` | number | The size of the tick. |
+
+
 ## Examples
 
 <CnStoryClockExamples />
