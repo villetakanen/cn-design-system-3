@@ -24,7 +24,15 @@ The source is MIT licensed.
 | `disabled` | boolean | Disables the clock. |
 | `view` | boolean | Displays the clock without interactivity. |
 
+## Events
 
+The clock emits a `change` event when the value of the clock changes.
+
+## Interactivity
+
+Clock segments can be clicked to fill or empty them. To reduce the clock value by one, shift-click the clock.
+
+The clock also listens to keyboard events. Arrow up, enter and space add a segment to the clock, while arrow down removes a segment.
 
 ## Children
 
@@ -38,17 +46,16 @@ A child component that represents a segment of the clock.
 | ---- | ---- | ----------- |
 | `size` | number | The size of the tick. |
 
-
 ## Examples
 
 <CnStoryClockExamples />
 
-### PbtA Damage Clock
+### A PbtA Damage Clock
 
 <div class="grid two-cols">
 <div>
 
-#### Example
+#### Demo
 
 <cn-story-clock name="Harm" value="2">
 
@@ -64,7 +71,7 @@ A child component that represents a segment of the clock.
 
 </cn-story-clock>
 
-PbtA harm uses a 6 segmet progress clock, where the last three steps are wider than the first three. 
+PbtA harm uses a 6 segment progress clock, where the last three steps are wider than the first three. 
 This is to represent the increasing severity of harm.
 
 </div>
@@ -90,36 +97,9 @@ This is to represent the increasing severity of harm.
 </div>
 </div>
 
+### Additional Examples
 
-## Testing Testing
-
-<cn-story-clock value="1">
-  <cn-tick></cn-tick>
-  <cn-tick></cn-tick>
-</cn-story-clock>
-
-<cn-story-clock value="2">
-  <cn-tick></cn-tick>
-  <cn-tick></cn-tick>
-  <cn-tick></cn-tick>
-</cn-story-clock>
-
-<cn-story-clock value="3">
-  <cn-tick></cn-tick>
-  <cn-tick></cn-tick>
-  <cn-tick></cn-tick>
-  <cn-tick></cn-tick>
-</cn-story-clock>
-
-<cn-story-clock value="3">
-  <cn-tick></cn-tick>
-  <cn-tick></cn-tick>
-  <cn-tick></cn-tick>
-  <cn-tick></cn-tick>
-  <cn-tick></cn-tick>
-</cn-story-clock>
-
-<cn-story-clock value="2">
+<cn-story-clock value="3" disabled name="Disabled 6 segment Clock">
   <cn-tick></cn-tick>
   <cn-tick></cn-tick>
   <cn-tick></cn-tick>
@@ -128,63 +108,8 @@ This is to represent the increasing severity of harm.
   <cn-tick></cn-tick>
 </cn-story-clock>
 
-<cn-story-clock value="3">
+<cn-story-clock value="1" view name="3 segment clock with large final segment">
   <cn-tick></cn-tick>
-  <cn-tick></cn-tick>
-  <cn-tick></cn-tick>
-  <cn-tick></cn-tick>
-  <cn-tick></cn-tick>
-  <cn-tick></cn-tick>
-  <cn-tick></cn-tick>
-</cn-story-clock>
-
-<cn-story-clock value="7">
-  <cn-tick></cn-tick>
-  <cn-tick></cn-tick>
-  <cn-tick></cn-tick>
-  <cn-tick></cn-tick>
-  <cn-tick></cn-tick>
-  <cn-tick></cn-tick>
-  <cn-tick></cn-tick>
-  <cn-tick></cn-tick>
-  <cn-tick></cn-tick>
-  <cn-tick></cn-tick>
-  <cn-tick></cn-tick>
-  <cn-tick></cn-tick>
-</cn-story-clock>
-
-#### Weird Examples
-
-<cn-story-clock value="0">
-  <cn-tick></cn-tick>
-  <cn-tick size="10"></cn-tick>
-</cn-story-clock>
-
-<cn-story-clock value="1">
-  <cn-tick size="4"></cn-tick>
-  <cn-tick size="3"></cn-tick>
-  <cn-tick size="2"></cn-tick>
-  <cn-tick></cn-tick>
-</cn-story-clock>
-
-<cn-story-clock value="2">
   <cn-tick></cn-tick>
   <cn-tick size="2"></cn-tick>
-  <cn-tick size="3"></cn-tick>
-  <cn-tick size="6"></cn-tick>
-</cn-story-clock>
-
-<cn-story-clock value="5">
-  <cn-tick></cn-tick>
-  <cn-tick size="2"></cn-tick>
-  <cn-tick size="3"></cn-tick>
-  <cn-tick size="4"></cn-tick>
-  <cn-tick size="5"></cn-tick>
-  <cn-tick size="6"></cn-tick>
-  <cn-tick size="7"></cn-tick>
-  <cn-tick size="8"></cn-tick>
-  <cn-tick size="9"></cn-tick>
-  <cn-tick size="10"></cn-tick>
-  <cn-tick size="11"></cn-tick>
-  <cn-tick size="12"></cn-tick>
 </cn-story-clock>
