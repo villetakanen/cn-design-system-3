@@ -1,0 +1,24 @@
+---
+import Layout from "@layouts/Layout.astro";
+
+---
+<Layout>
+  <main>
+  <form class="content-editor">
+    <div class="toolbar">
+      <label class="grow">
+        Title
+        <input type="text" name="title" placeholder="Title" />
+      </label>
+      <label>
+        Icon
+        <input type="text" name="icon" placeholder="Icon" />
+      </label>
+    </div>
+    <cn-editor name="content" />
+    <div class="toolbar">
+      <button type="submit">Save</button>
+    </div>
+  </form>
+</main>
+</Layout>

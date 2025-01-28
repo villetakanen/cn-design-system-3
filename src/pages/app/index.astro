@@ -9,22 +9,24 @@ const size = allAppComps.length;
 ---
 <Layout>
   <main>
-	<div class="content-columns">
-	  <article class="column-l">
-       <h1>App</h1>
-
-       <p>These native and web components are used to create the look and feel of the Application.</p>
-
-       {allAppComps.map((comp) => (
-         <p>
+	  <div class="content-columns">
+	    <article class="column-l">
+        <h1>App</h1>
+        <p>These native and web components are used to create the look and feel of the Application.</p>
+        {allAppComps.map((comp) => (
+          <p>
             <a href={`/app/${comp.id}`}>
               <cn-icon small noun={comp.data.icon}></cn-icon>
               {comp.data.title}
             </a>
-         </p>
-       ))}
+          </p>
+        ))}
 
-        <p>{size} pages.</p>
+        <h2>App Layouts</h2>
+        <p>The app supports few "layouts", all which have been demonstrated on custom pages below:</p>
+        <p>
+          <a href="/app/editor">Editor</a>
+        </p>
       </article>
     </div>
   </main>
