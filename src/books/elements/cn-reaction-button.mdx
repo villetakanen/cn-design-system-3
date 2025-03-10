@@ -1,0 +1,75 @@
+---
+title: '<cn-reaction-button>'
+icon: 'edit'
+---
+# Reaction Buttons
+
+The `<cn-reaction-button>` element creates a clickable input for adding a social reaction (like, love, etc.) to a post or comment etc. 
+It supports all the nouns that a `<cn-icon>` supports (as it uses `<cn-icon>` internally).
+
+## Examples
+
+<div class="grid two-col">
+  <div class="light border border-radius p-1 surface">
+    <h3>LIGHT</h3>
+    <cn-reaction-button></cn-reaction-button>
+    <cn-reaction-button 
+      count="0"
+      icon="love"
+    ></cn-reaction-button>
+    <cn-reaction-button 
+      noun="arrow-up"
+      disabled
+    ></cn-reaction-button>
+    <cn-reaction-button 
+      noun="arrow-down"
+      disabled
+      count="4"
+    ></cn-reaction-button>
+    <cn-reaction-button 
+      noun="assets"
+      count="4"
+      aria-pressed="true"
+      checked
+      small>
+    </cn-reaction-button>
+  </div>
+  <div class="dark border border-radius p-1 surface">
+    <h3>DARK</h3>
+
+    <cn-reaction-button></cn-reaction-button>
+    <cn-reaction-button 
+      count="0"
+      icon="love"
+    ></cn-reaction-button>
+    <cn-reaction-button 
+      noun="arrow-up"
+      disabled
+    ></cn-reaction-button>
+    <cn-reaction-button 
+      noun="arrow-down"
+      disabled
+      count="4"
+    ></cn-reaction-button>
+    <cn-reaction-button
+      aria-pressed="true"
+      checked 
+      noun="assets"
+      count="4"
+      small>
+    </cn-reaction-button>
+  </div>
+</div>
+
+## Usage
+
+### Properties
+
+
+| Property | Description | Default |
+|------|-------------|---------|
+| `ariaPressed` | Aria pressed attribute, syncs with checked | 'false' |
+| `checked` | Checked state, syncs with ariaPressed | false |
+| `count` | Number of reactions, only visible if 0 or more | -1 |
+| `noun` | Noun for the reaction | 'love' |
+| `small` | Small size | false |
