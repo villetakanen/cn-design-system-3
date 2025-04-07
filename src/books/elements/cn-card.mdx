@@ -1,0 +1,91 @@
+---
+title: '<cn-card>'
+icon: 'layout'
+---
+# Cards
+
+A `cn-card` is a fixed container for a piece of content. It can be used to display a
+small amount of information, or to highlight a piece of content.
+
+<section class="flex flex-no-wrap">
+  <cn-card 
+    title="101 with ellipsis in the title, which is long enough to cut off"
+    description="A Card"
+    noun="fox">
+    <p>With some text</p>
+  </cn-card>
+  <cn-card
+    title="102"
+    elevation="2"
+    noun="mekanismi"
+    cover="/example-image-3.webp"
+    description="A Second Card">
+  </cn-card>
+  <cn-card 
+    title="203"
+    elevation="3"
+    noun="card"
+    description="A Third one">
+    <div class="toolbar border border-radius" slot="actions">
+      <button>Actions</button>
+      <button class="text">
+        <cn-icon noun="delete"></cn-icon>
+      </button>
+      <button class="call-to-action">
+        <cn-icon noun="add"></cn-icon>
+      </button>
+    </div>
+  </cn-card>
+</section>
+
+## Elevation
+
+The cards support 5 levels of elevation (starting from 0). The default elevation of a card is 1.
+
+import CnCardElevationDemo from '@components/elements/CnCardElevation.astro'
+
+<CnCardElevationDemo/>
+
+## UI states
+
+The card supports 3 UI states: `default`, `notify`, and `alert`.
+
+import CnCardStateDemo from '@components/elements/CnCardState.astro'
+
+<CnCardStateDemo/>
+
+## Full example
+
+<cn-card
+  noun="d12"
+  cover="/example-image-3.webp"
+  title="A title, which can be up to 2 lines long. A longer title is cut with an ellipsis. Obviously, the width of the card might affect your mileage"
+  href="/"
+  notify
+>
+  <p class="small">This is [a card](#cards). It can be used to display a small amount of information, or to highlight a piece of content.</p>
+  <p class="small">Using more than 1-3 short paragraphs of text is not recommended. The text in these paragraphs is [`.small`](/typography/typography).</p>
+  <div slot="actions" class="flex">
+    <cn-icon noun="mekanismi"></cn-icon>
+    <button>Click me</button>
+    <div style="flex-grow: 1"></div>
+    <button class="text">Click me</button>
+  </div>
+</cn-card>
+
+## Parameters
+
+| Parameter | Type | Default | Description |
+| --- | --- | --- | --- |
+| `elevation` | Number | 1 | The elevation of the card. |
+| `cover` | String | `undefined` | The URL of the cover image. |
+| `noun` | String | `undefined` | The noun of the card. |
+| `title` | String | '' | The title of the card. |
+| `href` | URL | '' | The URL to link to when the card title or cover is clicked. |
+
+## Slots
+
+| Slot | Description |
+| --- | --- |
+| `default` | Any content in the default slot will be rendered in the card body. The card body should be used sparingly for extract and synopsis purposes - and should consists one or more of paragraphs of text |
+| `actions` | The actions to display at the bottom of the card. |

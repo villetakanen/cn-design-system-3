@@ -1,0 +1,37 @@
+<script is:inline lang="javascript">
+    function setState(e) {
+      var card = document.getElementById('CardStateDemo');
+      card?.removeAttribute('notify');
+      card?.removeAttribute('alert');
+      if (e !== 'default') {
+        card?.setAttribute(e, '');
+      }
+    }
+    </script>
+    
+    <section class="flex flex-no-wrap">
+    <cn-card
+      elevation="0" 
+      notify
+      id="CardStateDemo"
+      title="State demo"
+      description="Please use the radio buttons next to this card to change the state of this card.">
+     
+    </cn-card>
+    
+    <fieldset class="fieldset grow">
+        <legend>Legend</legend>
+        <label>
+          <input type="radio" name="elevation" value="0"  onclick="setState('default');">
+          [default]
+        </label>
+        <label>
+          <input type="radio" name="elevation" value="1" checked onclick="setState('notify');">
+          notify
+        </label>
+        <label>
+          <input type="radio" name="elevation" value="2" onclick="setState('alert');">
+          alert
+        </label>
+      </fieldset>
+    </section>

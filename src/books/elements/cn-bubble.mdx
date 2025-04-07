@@ -1,0 +1,57 @@
+---
+title: '<cn-bubble>'
+icon: 'layout'
+---
+# Bubbles
+
+## Complex example
+
+<div class="flex flex-col">
+  <cn-bubble class="grow">
+    <div class="toolbar small">
+      <p class="grow">
+        <a href="#complex-example">Link to a profile</a>
+      </p>
+      <cn-menu inline="true">
+       <ul>
+         <li>
+           <a href="#">
+             <cn-icon xsmall noun="edit"></cn-icon>
+             Edit
+           </a>
+           <a href="#">
+             <cn-icon xsmall noun="delete"></cn-icon>
+             Remove
+           </a>
+         </li>
+       </ul>
+      </cn-menu>
+    </div>
+    <div>
+
+
+And here's a comment
+
+    </div>
+    <div class="toolbar justify-end">
+      <cn-reaction-button noun="love" count="4" small></cn-reaction-button>
+    </div>
+  </cn-bubble>
+
+  <cn-bubble reply="true" class="grow">
+    <div class="toolbar small">
+      <p class="grow">
+        <a href="#complex-example">Link to a profile</a>
+      </p>
+      <cn-menu inline>
+      </cn-menu>
+    </div>
+    <div>
+      <p>Here's a reply, with dolor sit amet, consectetur adipiscing elit. Nulla quis lorem ut libero malesuada feugiat. Nulla porttitor accumsan tincidunt. Curabitur aliquet quam id dui posuere blandit. Nulla quis lorem ut libero malesuada feugiat. Nulla porttitor accumsan tincidunt. Curabitur aliquet quam id dui posuere blandit.</p>
+    </div>
+    <div class="toolbar justify-end">
+      <cn-reaction-button disabled noun="love" count="4" small></cn-reaction-button>
+    </div>
+  </cn-bubble>
+</div>
+

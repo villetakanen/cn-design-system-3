@@ -1,7 +1,3 @@
-# Cyan Design System 
-
-**Release 1.x.y**, _Book 3_
-
 This is the second iteration of Cyan Design system, used for <a href="https://pelilauta.social">pelilauta.social</a> and related
 applications. The design system is built with <a href="https://lit.dev/" target="_blank">Lit</a> and modern CSS.
 

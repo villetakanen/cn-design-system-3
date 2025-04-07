@@ -1,0 +1,37 @@
+<script is:inline lang="javascript">
+    function setElevation(e) {
+      var card = document.getElementById('ElevationCardDemo');
+      card.setAttribute('elevation', e);
+      console.log('elevation', e);
+    }
+    </script>
+    
+    <section class="flex flex-no-wrap">
+    <cn-card
+      elevation="0" 
+      id="ElevationCardDemo"
+      title="Elevation demo"
+      description="Please use the radio buttons next to this card to change the elevation of this card.">
+     
+    </cn-card>
+    
+    <fieldset class="fieldset grow">
+        <legend>Legend</legend>
+        <label>
+          <input type="radio" name="elevation" value="0" checked onclick="setElevation(0);">
+          0
+        </label>
+        <label>
+          <input type="radio" name="elevation" value="1" onclick="setElevation(1);">
+          1
+        </label>
+        <label>
+          <input type="radio" name="elevation" value="2" onclick="setElevation(2);">
+          2
+        </label>
+        <label>
+          <input type="radio" name="elevation" value="3" onclick="setElevation(3);">
+          3
+        </label>
+      </fieldset>
+    </section>
