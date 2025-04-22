@@ -1,0 +1,49 @@
+---
+title: '<cn-loader>'
+icon: 'design' 
+---
+
+# Loader
+
+Loaders indicate a waiting period or that a process is ongoing. The `cn-loader` uses a subtle background animation and a pulsing icon.
+
+## Examples
+<div class="grid two-col">
+<fieldset class="light border border-radius p-1 surface">
+  <legend>Loader examples</legend>
+  <cn-loader></cn-loader>
+  <button>
+    <cn-loader noun="mekanismi"></cn-loader>
+  </button>
+</fieldset>
+<fieldset class="dark border border-radius p-1 surface">
+  <legend>Loader examples</legend>
+  <cn-loader noun="design"></cn-loader>
+  <button>
+    <cn-loader noun="adventurer"></cn-loader>
+  </button>
+</fieldset>
+</div>
+
+## Usage
+
+### Attributes
+
+| Name   | Description                                     | Default | Options              |
+|--------|-------------------------------------------------|---------|----------------------|
+| `noun` | Sets the icon displayed within the loader.      | `fox`   | Any valid icon noun  |
+| `for`  | Adjusts the loader style for specific contexts. | `''`    | `''`, `navigation`   |
+
+### Tokens
+
+| Name                       | Description                                      | Default                                                              |
+|----------------------------|--------------------------------------------------|----------------------------------------------------------------------|
+| `--cn-loader-color`        | Color of the loader's icon and spinning ring.    | `light-dark(var(--chroma-primary-60), var(--chroma-surface-60))`     |
+| `--cn-loader-size`         | Overall size (width and height) of the loader.   | `calc(var(--cn-line) * 3)`                                           |
+| `--cn-loader-line-width`   | Thickness of the spinning ring's border.         | `calc(var(--cn-grid) / 2)`                                           |
+
+*Note: The `--cn-loader-size` token can be overridden in specific contexts (e.g., inside buttons or navigation elements) for appropriate sizing.*
+
+### Events
+
+The `<cn-loader>` component does not emit specific events.
