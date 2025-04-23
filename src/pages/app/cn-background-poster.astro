@@ -1,0 +1,20 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@layouts/Layout.astro";
+import BackgroundPoster from "@components/base/BackgroundPoster.astro";
+
+// Get all entries from a collection.
+// Requires the name of the collection as an argument.
+const allAppComps = await getCollection("app");
+const size = allAppComps.length;
+---
+<Layout>
+  <BackgroundPoster src="/example-image-3.webp" />
+  <main>
+	  <div class="content-columns">
+	    <article class="column-l surface p-2 border-radius">
+        <h1>#cn-background-poster</h1>
+      </article>
+    </div>
+  </main>
+</Layout>
