@@ -3,14 +3,29 @@ import AppBar from "@components/base/AppBar.astro";
 import Rail from "src/components/base/Rail.astro";
 import BaseHead from "../components/base/BaseHead.astro";
 
-const { title: propTitle } = Astro.props;
-const title = propTitle || "Cyan Design System, Book 3";
----
+interface Props {
+  title?: string;
+  tray?: boolean|undefined;
+}
 
+const { 
+  title: propTitle,
+  tray 
+} = Astro.props;
+const title = propTitle || "Cyan Design System, Book 3";
+
+---
 <!doctype html>
 <html lang="en">
+  
   <AppBar title={title} />
   <BaseHead title={title} />
+  {tray &&
+    <cn-tray-button aria-controls=".cn-tray"></cn-tray-button>
+    <nav class="cn-tray">
+      <slot name="tray" />
+    </nav>
+  }
   <body>
     <Rail />
 	<slot />

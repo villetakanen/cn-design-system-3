@@ -1,16 +1,18 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
+import AppTray from "@components/app/AppTray.astro";
 
 // Get all entries from a collection.
 // Requires the name of the collection as an argument.
 const allAppComps = await getCollection("app");
 const size = allAppComps.length;
 ---
-<Layout>
+<Layout tray>
+  <AppTray slot="tray" />
   <main>
-	<div class="content-columns">
-	  <article class="column-l">
+	  <div class="content-columns">
+	    <article class="column-l">
        <h1>App</h1>
 
        <p>These native and web components are used to create the look and feel of the Application.</p>

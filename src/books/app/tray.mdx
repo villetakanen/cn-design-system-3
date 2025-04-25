@@ -1,0 +1,42 @@
+---
+title: 'Tray'
+icon: 'layout' 
+---
+# Tray
+
+The Tray component is a navigation drawer, inspired by Material Design's navigation drawers. It typically slides in from the left side of the screen and contains primary navigation links or actions. Its visibility is controlled by the `<cn-tray-button>` component.
+
+## Examples
+
+The Tray is designed to work with the `<cn-tray-button>`. Clicking the button toggles the Tray's visibility.
+
+<div class="p-1 border border-radius surface flex flex-no-wrap">
+  <div style="container: here / inline-size; flex-shrink:1; width: 100px">
+    <cn-tray-button style="position:relative"/>
+  </div>
+  <p><em>(Click the button above to interact with the Tray - requires the Tray element to be present in the page layout)</em></p>
+</div>
+
+## Design tokens
+
+The Tray component uses the following design tokens:
+
+
+## Usage
+
+The Tray is typically implemented as a `<nav class="cn-tray">` element placed within your main page layout. Its content
+usually consists of lists (`<ul>`) containing navigation links (`<a class="tray-button">`) often paired with 
+`<cn-icon>` components.
+
+```html
+<!-- Example structure within your layout -->
+<nav class="cn-tray">
+  <h2>Application Menu</h2>
+  <ul>
+    <li><a href="/" class="tray-button"><cn-icon noun="home"></cn-icon> Home</a></li>
+    <li><a href="/settings" class="tray-button"><cn-icon noun="settings"></cn-icon> Settings</a></li>
+    <!-- More items -->
+  </ul>
+</nav>
+
+

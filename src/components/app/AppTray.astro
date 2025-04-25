@@ -1,0 +1,28 @@
+---
+import { getCollection } from "astro:content";
+
+// Get all entries from a collection.
+// Requires the name of the collection as an argument.
+const allAppComps = await getCollection("app");
+const size = allAppComps.length;
+---
+<h3>App</h3>
+<ul>
+  {allAppComps.map((comp) => (
+    <li>
+      <a href={`/app/${comp.id}`} class="tray-button">
+        <cn-icon small noun={comp.data.icon}></cn-icon>
+        {comp.data.title}
+      </a>
+    </li>
+  ))}
+  <li>
+    <a href="/app/cn-background-poster" class="tray-button">
+      <cn-icon small noun="layout"></cn-icon>
+      #cn-background-poster
+    </a>
+  </li>
+</ul>
+
+<p>{size +1} pages.</p>
+      
