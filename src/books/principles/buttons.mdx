@@ -1,0 +1,28 @@
+---
+title: 'Buttons'
+icon: 'check'
+---
+import ButtonDemo from '../../components/app/ButtonDemo.astro'
+
+# Buttons
+
+Cyan Design System provides styling for `<button>` elements and `<a>` elements that are used as buttons. The styling is based on the [Material Design](https://material.io/components/buttons) guidelines for buttons.
+
+Buttons are designed to be accessible and to provide a consistent look and feel across the app. They conform to touch targets and are designed to be used with the `:focus-visible` pseudo-class to provide a consistent focus style across the app.
+
+## Demo
+
+<div class="grid two-col">
+  <div class="light border border-radius p-1 surface">
+    <h3>LIGHT</h3>
+    <ButtonDemo />
+  </div>
+  <div class="dark border border-radius p-1 surface">
+    <h3>DARK</h3>
+    <ButtonDemo />
+  </div>
+</div>
+
+<div class="flex flex-col full-width">
+  <button>Stretched</button>
+</div>

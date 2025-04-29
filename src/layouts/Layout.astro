@@ -4,16 +4,12 @@ import Rail from "src/components/base/Rail.astro";
 import BaseHead from "../components/base/BaseHead.astro";
 
 interface Props {
-  title?: string;
-  tray?: boolean|undefined;
+	title?: string;
+	tray?: boolean | undefined;
 }
 
-const { 
-  title: propTitle,
-  tray 
-} = Astro.props;
+const { title: propTitle, tray } = Astro.props;
 const title = propTitle || "Cyan Design System, Book 3";
-
 ---
 <!doctype html>
 <html lang="en">
