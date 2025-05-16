@@ -3,14 +3,17 @@ interface Props {
 	title?: string;
 	shortTitle?: string;
 	noun?: string;
+  modal?: boolean;
 }
-const { title, shortTitle, noun } = Astro.props as Props;
+const { title, shortTitle, noun, modal } = Astro.props as Props;
 
 const barTitle = title || "Cyan Design System Book 3";
 const barShortTitle = shortTitle || "CDS Book 3";
 const barNoun = noun || "design";
+const mode = modal ? "modal" : undefined;
 ---
 <cn-app-bar
+  {mode}
   title={barTitle}
   short-title={barShortTitle}
   noun={barNoun}

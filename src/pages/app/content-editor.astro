@@ -1,0 +1,71 @@
+---
+import EditorLayout from "@layouts/EditorLayout.astro";
+
+const md = `# Content Editor 
+
+The \`.content-editor\` component is a content area that can be used to incude editor buttons, and fields.
+
+It automatically sizes the editor/textarea and toolbars to keep them all visible.
+
+## h2
+
+### h3
+
+#### h4
+
+**Strong**
+
+*Italic*
+
+\`code\`
+
+## Demo purpose lorem ipsum here, to make this editor overflow.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+`
+---
+<EditorLayout>
+  <form class="content-editor">
+    <div class="toolbar">
+      <label class="grow">Title
+        <input type="text" placeholder="Editor viewport testing" />
+      </label>
+      <div class="grow">
+        <cn-toggle-button id="showLightbox" label="Show Lightbox" />
+      </div>
+    </div>
+    <div id="lightboxContainer">
+      <cn-lightbox style="max-width: 200px;"/>
+    </div>
+    <cn-editor
+      value={md}
+    ></cn-editor>
+    <div class="toolbar">
+      <button>
+        <cn-icon noun="fox"></cn-icon>
+        <span>Save</span>
+      </button>
+    </div>
+  </form>
+</EditorLayout>
+
+<script is:inline>
+    const lightbox = document.querySelector("#lightboxContainer");
+    const showLightbox = document.querySelector("#showLightbox");
+    
+
+    showLightbox.addEventListener('change', (event) => {
+        console.log('cn-toggle-button:change', event.target.pressed);
+        if (event.target.pressed) {
+            lightbox.style.display = "block";
+        } else {
+            lightbox.style.display = "none";
+        }
+    });
+</script>
+
+<style>
+#lightboxContainer {
+  display: none
+};
+</style>
