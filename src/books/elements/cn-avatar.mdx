@@ -1,0 +1,54 @@
+---
+title: '<cn-avatar>'
+icon: 'avatar'
+---
+
+# Avatar (`<cn-avatar>`)
+
+The `<cn-avatar>` component displays a user's avatar. It can show an image, initials from a nickname, or a default placeholder icon.
+
+## Examples
+
+<div class="grid two-col">
+  <div class="light border border-radius p-1 surface">
+    <h3>LIGHT</h3>
+    <div class="flex items-center gap-1 my-1">
+      <cn-avatar src="/example/avatar.webp"></cn-avatar>
+      <cn-avatar elevation="1" nick="Ville Takanen"></cn-avatar>
+      <cn-avatar elevation="2" ></cn-avatar>
+    </div>
+  </div>
+  <div class="dark border border-radius p-1 surface">
+    <h3>DARK</h3>
+    <div class="flex items-center gap-1 my-1">
+      <cn-avatar src="/example/avatar.webp"></cn-avatar>
+      <cn-avatar elevation="1" nick="Jane Doe"></cn-avatar>
+      <cn-avatar elevation="2"></cn-avatar>
+    </div>
+  </div>
+</div>
+
+## Usage
+
+### Properties / Attributes
+
+| Name   | Attribute | Type   | Default | Description                                                                                                |
+|--------|-----------|--------|---------|------------------------------------------------------------------------------------------------------------|
+| `src`  | `src`     | String | `''`    | URL to the avatar image. If provided, this will be displayed.                                              |
+| `nick` | `nick`    | String | `''`    | User's nickname. If `src` is not provided and `nick` is, the first two characters of `nick` will be shown. |
+| `elevation` | `elevation` | Number | `0`     | The elevation level of the avatar. This affects the shadow and depth of the avatar.                        |
+
+If neither `src` nor `nick` is provided, a default "avatar" icon is displayed.
+
+### HTML
+
+```html
+<!-- Avatar with an image -->
+<cn-avatar src="/path/to/user-image.png"></cn-avatar>
+
+<!-- Avatar with initials (e.g., "JD") -->
+<cn-avatar nick="John Doe"></cn-avatar>
+
+<!-- Default placeholder avatar -->
+<cn-avatar></cn-avatar>
+```
