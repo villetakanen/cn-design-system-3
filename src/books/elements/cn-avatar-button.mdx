@@ -1,0 +1,41 @@
+---
+title: '<cn-avatar-button>'
+icon: 'avatar'
+---
+
+# Avatar (`<cn-avatar-button>`)
+
+The `<cn-avatar-button>` component displays a button with the Avatar. It's intented to be an interactive variant of the [`<cn-avatar>`](/elements/cn-avatar).
+
+## Examples
+
+<div class="grid two-col">
+  <div class="light border border-radius p-1 surface">
+    <h3>LIGHT</h3>
+    <cn-avatar-button src="/example/avatar.webp"></cn-avatar-button>
+  </div>
+  <div class="dark border border-radius p-1 surface">
+    <h3>DARK</h3>
+    <cn-avatar-button></cn-avatar-button>
+  </div>
+</div>
+
+## Usage
+
+### Properties / Attributes
+
+| Name   | Attribute | Type   | Default | Description                                                                                                |
+|--------|-----------|--------|---------|------------------------------------------------------------------------------------------------------------|
+| `src`  | `src`     | String | `''`    | URL to the avatar image. If provided, this will be displayed.                                              |
+
+If `src` is not provided, the default "Avatar" icon is displayed.
+
+### HTML
+
+```html
+<!-- Avatar with an image -->
+<cn-avatar-button src="/path/to/user-image.png"></cn-avatar>
+
+<!-- Default placeholder avatar -->
+<cn-avatar></cn-avatar>
+```
