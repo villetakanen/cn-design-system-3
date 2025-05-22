@@ -4,15 +4,27 @@ icon: 'layout'
 ---
 # Bubbles
 
+The `<cn-bubble>` element provides a styled component for comments and replies in a discussion.
+
 ## Complex example
 
 <div class="flex flex-col">
+  <article class="flex flex-row flex-no-wrap">
+    <cn-avatar nick="Sparrow" src="/example/avatar.webp"/>
+    <cn-bubble class="grow">
+      <div class="toolbar">
+        <p>A Toolbar on top of the comment</p>
+        <cn-menu inline="true"/>
+      </div>
+      <p>Some comment details here...</p>
+    </cn-bubble>
+  </article>
   <cn-bubble class="grow">
     <div class="toolbar small">
       <p class="grow">
         <a href="#complex-example">Link to a profile</a>
       </p>
-      <cn-menu inline="true">
+       <cn-menu inline="true">
        <ul>
          <li>
            <a href="#">

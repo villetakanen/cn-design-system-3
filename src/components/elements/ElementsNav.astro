@@ -1,0 +1,19 @@
+---
+import { getCollection } from "astro:content";
+
+const allAppComps = await getCollection("elements");
+const sortedComps = allAppComps.sort((a, b) => (a.data.title.localeCompare(b.data.title)))
+
+---
+<nav>
+  <ul>
+    {sortedComps.map((comp) => (
+      <li>
+        <a href={`/elements/${comp.id}`}>
+          <cn-icon small noun={comp.data.icon}></cn-icon>
+          <span>{comp.data.title}</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>

@@ -1,13 +1,14 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
+import ElementsTray from '@components/elements/ElementsTray.astro'
 
 // Get all entries from a collection.
 // Requires the name of the collection as an argument.
 const allAppComps = await getCollection("elements");
 const size = allAppComps.length;
 ---
-<Layout>
+<Layout tray>
   <main>
 	<div class="content-columns">
 	  <article class="column-l">
@@ -28,4 +29,5 @@ const size = allAppComps.length;
       </article>
     </div>
   </main>
+  <ElementsTray slot="tray" />
 </Layout>

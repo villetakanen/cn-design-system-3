@@ -26,9 +26,9 @@ const { Content } = await render(post);
 <Layout>
   <main>
 	<div class="content-columns">
-	  { !post.data.multipart ? <article class="column-l">
+	  { !post.data.multipart ? <section class="column-l">
           <Content />
-        </article> :
+        </section> :
 	    <Content />
 	  }
 	</div>

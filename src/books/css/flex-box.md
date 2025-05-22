@@ -11,9 +11,39 @@ The default styling for flexbox is:
   display: flex;
   gap: var(--cn-gap);
   flex-wrap: wrap;
-  align-items: flex-start;
+}
+.flex > * {
+  flex-grow: 1;
+  flex-shrink: 0;
 }
 ```
+
+## Examples
+
+### Default styling
+
+<div class="flex">
+  <cn-card 
+    title="A Card"
+  ></cn-card>
+  <cn-avatar nick="Sparrow"></cn-avatar>
+  <h2>H2</h2>
+  <p>Paragraph</p>
+</div>
+
+### Column
+
+<div class="flex flex-col">
+  <cn-card 
+    title="A Card"
+  ></cn-card>
+  <cn-card 
+    title="Another"
+  ></cn-card>
+  <cn-bubble>
+    And a Bubble
+  </cn-bubble>
+</div>
 
 ## Atomics
 
@@ -22,7 +52,7 @@ best-practice naming conventions from [Tailwind CSS](https://tailwindcss.com/).
 
 | Class | Description |
 | --- | --- |
-| `flex` | This class sets `display: flex;` on the element. |
+| `flex` | This class sets `display: flex;` and adds the basic styles from above. |
 | `flex-row` | This class sets `flex-direction: row;` on the element. |
 | `flex-col` | This class sets `flex-direction: column;` on the element, and `width: 100%` to all direct children |
 | `flex-no-wrap` | This class sets `flex-wrap: nowrap;` on the element. |
