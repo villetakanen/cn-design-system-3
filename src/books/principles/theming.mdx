@@ -1,0 +1,23 @@
+---
+title: 'Theming and overriding the theme colors'
+icon: 'design'
+---
+# Theming and overriding the theme colors
+
+Cyan Design System provides a set of color tokens that can be used to create a consistent look and feel across the app. 
+
+The simplest way to override the theme colors is to use the `:root` selector in your CSS and set the
+chroma-prefixed color tokens to your desired values. This will override the default theme colors and apply
+them across the app.
+
+## Demo
+
+import ThemeSwitcher from '../../components/principles/ThemeSwitcher.astro'
+
+<ThemeSwitcher />
+
+import ThemeColorDemo from '../../components/principles/ThemeColorDemo.astro'
+
+<ThemeColorDemo scale="surface"/>
+<ThemeColorDemo scale="primary"/>
+
