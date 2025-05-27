@@ -11,19 +11,10 @@ export async function getStaticPaths() {
 	}));
 }
 
-interface Props {
-	post: {
-		data: {
-			title: string;
-			icon: string;
-			multipart?: boolean;
-		};
-	};
-}
-const { post } = Astro.props as Props;
+const { post } = Astro.props;
 const { Content } = await render(post);
 ---
-<Layout>
+<Layout tray>
   <main>
 	<div class="content-columns">
 	  { !post.data.multipart ? <section class="column-l">

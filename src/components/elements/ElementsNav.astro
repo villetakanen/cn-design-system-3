@@ -2,8 +2,9 @@
 import { getCollection } from "astro:content";
 
 const allAppComps = await getCollection("elements");
-const sortedComps = allAppComps.sort((a, b) => (a.data.title.localeCompare(b.data.title)))
-
+const sortedComps = allAppComps.sort((a, b) =>
+	a.data.title.localeCompare(b.data.title),
+);
 ---
 <nav>
   <ul>

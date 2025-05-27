@@ -1,0 +1,24 @@
+---
+import { getCollection } from "astro:content";
+
+const allComps = await getCollection("css");
+
+const subCollections = new Set(allComps.map((comp) => comp.data.collection));
+---
+{Array.from(subCollections).map((collection) => (
+  <nav class="column-s">
+    <h3>{collection}</h3>
+    <ul>
+      {allComps
+        .filter((comp) => comp.data.collection === collection)
+        .sort((a, b) => a.data.title.localeCompare(b.data.title))
+        .map((comp) => (
+          <li>
+            <a href={`/css/${comp.id}`}>
+              <span>{comp.data.title}</span>
+            </a>
+          </li>
+        ))}
+    </ul>
+  </nav>
+))}

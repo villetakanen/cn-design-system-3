@@ -2,7 +2,11 @@
 title: 'Flex Box'
 icon: 'css'
 description: 'Flex Box'
+multipart: true
+collection: 'Atomics'
 ---
+<section class="column-l">
+
 # Flex Box
 
 The default styling for flexbox is:
@@ -10,11 +14,9 @@ The default styling for flexbox is:
 .flex {
   display: flex;
   gap: var(--cn-gap);
-  flex-wrap: wrap;
 }
 .flex > * {
-  flex-grow: 1;
-  flex-shrink: 0;
+  flex: 1 1 auto;
 }
 ```
 
@@ -39,7 +41,9 @@ The default styling for flexbox is:
   ></cn-card>
   <cn-card 
     title="Another"
-  ></cn-card>
+  >
+    <p>With some content</p>
+  </cn-card>
   <cn-bubble>
     And a Bubble
   </cn-bubble>
@@ -52,7 +56,7 @@ best-practice naming conventions from [Tailwind CSS](https://tailwindcss.com/).
 
 | Class | Description |
 | --- | --- |
-| `flex` | This class sets `display: flex;` and adds the basic styles from above. |
+| `flex` | This class sets `display: flex;` and adds the basic styles for flex-box and children from above. |
 | `flex-row` | This class sets `flex-direction: row;` on the element. |
 | `flex-col` | This class sets `flex-direction: column;` on the element, and `width: 100%` to all direct children |
 | `flex-no-wrap` | This class sets `flex-wrap: nowrap;` on the element. |
@@ -63,3 +67,11 @@ best-practice naming conventions from [Tailwind CSS](https://tailwindcss.com/).
 | `justify-center` | This class sets `justify-content: center;` on the element. |
 | `align-center` | This class sets `align-items: center;` on the element. |
 | `items-center` | This class sets `align-items: center;` and `justify-content: center;` on the element. |
+</section>
+
+<section class="column-s flex items-center">
+  <a href="#" class="button text">
+    <span class="icon icon-css"></span>
+    <span>CSS</span>
+  </a>
+</section>

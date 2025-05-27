@@ -32,8 +32,8 @@ const css = defineCollection({
 	loader: glob({ pattern: "*.{md,mdx}", base: "./src/books/css" }),
 	schema: z.object({
 		title: z.string(),
-		description: z.string(),
-		readme: z.string().optional(),
+		collection: z.string().default("Generics"),
+		multipart: z.boolean().optional(),
 	}),
 });
 
