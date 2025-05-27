@@ -1,19 +1,74 @@
 ---
 title: '<cn-share-button>'
-icon: 'edit'
+icon: 'share' 
+usage: '<cn-share-button [label="Share"] [noun="share"] [url="https://example.com"] [title="Example Page"] [text="Check this out!"] [disabled] [fallback]>'
 ---
-# Sharing button
+# Sharing Button
 
 The `<cn-share-button>` element provides an accessible and progressively enhanced share button for sharing the
-current view. The button accepts custom label and an url to be shared - but works without either.
+current view or a specific URL. The button accepts a custom label, icon noun, and URL to be shared, but works
+without them by defaulting to sharing the current page. It utilizes the Web Share API if available, and 
+copying to clipboard as a fallback if the API is not supported or fails.
 
-## Demo
+## Examples
 
-<div class="toolbar">
-  <div class="dark p-2 surface">
-    <cn-share-button label="A Label"></cn-share-button>
+<div class="grid two-col">
+  <div class="light border border-radius p-1 surface">
+    <h3>LIGHT</h3>
+    <p>
+    <cn-share-button label="Share Page" class="my-1"></cn-share-button>&nbsp;
+    <cn-share-button noun="mekanismi" url="https://example.com" text="Check this out!" class="my-1"></cn-share-button>&nbsp;
+    <cn-share-button disabled label="Cannot Share" class="my-1"></cn-share-button>
+    </p>
   </div>
-  <div class="surface light p-2">
-    <cn-share-button noun="fox"></cn-share-button>
+  <div class="dark border border-radius p-1 surface">
+    <h3>DARK</h3>
+    <cn-share-button label="Share Article" class="my-1"></cn-share-button>&nbsp;
+    <cn-share-button noun="fox" title="Awesome Fox Page" class="my-1"></cn-share-button>&nbsp;
+    <cn-share-button class="my-1"></cn-share-button>
   </div>
 </div>
+
+## Usage
+
+### Properties / Attributes
+
+| Name      | Attribute | Type    | Default                                  | Description                                                                                                                               |
+|-----------|-----------|---------|------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
+| `label`   | `label`   | String  | `'Share'`                                | Text label displayed next to the icon. If empty, only the icon is shown.                                                                  |
+| `noun`    | `noun`    | String  | `'share'`                                | The noun for the `<cn-icon>` to be displayed.                                                                                             |
+| `src`     | `src`     | String  | `window.location.href`                   | The URL to be shared. Defaults to the current page's URL.                                                                                 |
+| `title`   | `title`   | String  | `document.title`                         | The title of the content to be shared. Defaults to the current page's title. Used by the Web Share API.                                   |
+| `text`    | `text`    | String  | `''`                                     | A short description or text to be shared. Used by the Web Share API.                                                                      |
+| `disabled`| `disabled`| Boolean | `false`                                  | If true, the button is disabled and cannot be interacted with.                                                                            |
+| `fallback`| `fallback`| Boolean | `false`                                  | If true, forces the component to use the fallback mechanism (e.g. copy to clipboard if Web Share API is not supported or fails) if implemented. |
+
+### Events
+
+The component dispatches the following custom events:
+
+| Name    | `event.detail` | Description                                                                                                |
+|---------|----------------|------------------------------------------------------------------------------------------------------------|
+| `share` | `{ url, title, text }` | Fired when the Web Share API is successfully invoked. The detail contains the shared data.             |
+| `copy`  | `{ textToCopy }` | Fired when the fallback mechanism (copy to clipboard) is successfully invoked. The detail contains the copied text. |
+| `error` | `{ message, error? }` | Fired when an error occurs during the share action (e.g., Web Share API failure, copy failure, or API not supported and no fallback). |
+
+### HTML
+
+```html
+<!-- Basic share button (shares current page) -->
+<cn-share-button></cn-share-button>
+
+<!-- Share button with a custom label and icon -->
+<cn-share-button label="Share this Article" noun="article"></cn-share-button>
+
+<!-- Share button for a specific URL, title, and text -->
+<cn-share-button
+  url="https://example.com/some-page"
+  title="Specific Page Title"
+  text="Check out this interesting page!"
+  noun="link"
+></cn-share-button>
+
+<!-- Disabled share button -->
+<cn-share-button label="Sharing Disabled" disabled></cn-share-button>
