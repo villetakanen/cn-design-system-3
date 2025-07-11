@@ -1,0 +1,46 @@
+---
+title: 'Select'
+icon: 'arrow-down'
+multipart: true
+---
+<div class="column-l">
+# Select
+
+We support the native HTML select element.
+
+## Select States
+
+Selects can have a `data-error` attribute to indicate an error. This can be used to show a visual indicator to the user.
+
+### Example
+
+import SelectDemo from '../../components/app/SelectDemo.astro';
+
+```html
+<label>
+  Select
+  <select>
+    ...
+
+<label>
+  <span>Select class="number"</span>
+  <select class="number">
+    ...
+```
+
+Renders as:
+
+<div class="grid two-col">
+  <div class="light border border-radius p-1 surface">
+    <h3>LIGHT</h3>
+    <SelectDemo />
+  </div>
+  <div class="dark border border-radius p-1 surface">
+    <h3>DARK</h3>
+    <SelectDemo />
+  </div>
+</div>
+
+</div>
+
+
