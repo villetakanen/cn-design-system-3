@@ -3,34 +3,143 @@ title: '<cn-menu>'
 icon: 'layout'
 ---
 # Menu
- 
+
+The `<cn-menu>` component provides a flexible, accessible, and easy-to-use menu for your application. It can be used for a variety of purposes, from simple action menus to more complex navigation.
+
+## Basic Usage
+
+To use the component, you slot in a standard `<ul>` element with list items. Each `<li>` should contain an `<a>` or `<button>` element.
+
+<cn-toggle-button id="menu-align-toggle" label="Align menu right"></cn-toggle-button>
+<div class="flex" id="menu-align-demo" style="justify-content: flex-start; border: 1px solid var(--color-border); padding: var(--cn-grid); border-radius: var(--cn-border-radius);">
 <cn-menu>
-       <ul>
-         <li>
-           <a href="#">
-             <cn-icon xsmall noun="edit"></cn-icon>
-             Edit
-           </a>
-           <a href="#">
-             <cn-icon xsmall noun="delete"></cn-icon>
-             Remove
-           </a>
-         </li>
-       </ul>
-      </cn-menu>
+  <ul>
+    <li>
+      <a href="#">
+        <cn-icon xsmall noun="edit"></cn-icon>
+        <span>Edit</span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <cn-icon xsmall noun="delete"></cn-icon>
+        <span>Remove</span>
+      </a>
+    </li>
+  </ul>
+</cn-menu>
+</div>
+<script>
+{`
+  const toggle = document.getElementById('menu-align-toggle');
+  const demo = document.getElementById('menu-align-demo');
+  if (toggle && demo) {
+    toggle.addEventListener('change', (e) => {
+      demo.style.justifyContent = e.target.pressed ? 'flex-end' : 'flex-start';
+    });
+  }
+`}
+</script>
 
+## Properties
 
- <cn-menu inline="true">
-       <ul>
-         <li>
-           <a href="#">
-             <cn-icon xsmall noun="edit"></cn-icon>
-             Edit
-           </a>
-           <a href="#">
-             <cn-icon xsmall noun="delete"></cn-icon>
-             Remove
-           </a>
-         </li>
-       </ul>
-      </cn-menu>
+### Inline
+
+The `inline` property changes the menu icon to a horizontal "dots" icon, which can be more suitable for inline contexts.
+
+<cn-menu inline>
+  <ul>
+    <li>
+      <a href="#">
+        <cn-icon xsmall noun="edit"></cn-icon>
+        <span>Edit</span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <cn-icon xsmall noun="delete"></cn-icon>
+        <span>Remove</span>
+      </a>
+    </li>
+  </ul>
+</cn-menu>
+
+### Disabled
+
+The `disabled` property will disable the menu button, preventing it from being opened.
+
+<cn-menu disabled>
+  <ul>
+    <li>
+      <a href="#">
+        <cn-icon xsmall noun="edit"></cn-icon>
+        <span>Edit</span>
+      </a>
+    </li>
+  </ul>
+</cn-menu>
+
+## Content Structure
+
+### Grouping items
+
+You can group related menu items by using multiple `<ul>` elements. A separator will be automatically added between the groups.
+
+<cn-menu>
+  <ul>
+    <li>
+      <a href="#">
+        <cn-icon xsmall noun="avatar"></cn-icon>
+        <span>Profile</span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <cn-icon xsmall noun="assets"></cn-icon>
+        <span>Assets</span>
+      </a>
+    </li>
+  </ul>
+  <ul>
+    <li>
+      <a href="#">
+        <cn-icon xsmall noun="admin"></cn-icon>
+        <span>Admin</span>
+      </a>
+    </li>
+  </ul>
+  <ul>
+    <li>
+      <button type="button">
+        <cn-icon xsmall noun="hood"></cn-icon>
+        <span>Log out</span>
+      </button>
+    </li>
+  </ul>
+</cn-menu>
+
+## Events
+
+The component fires a `menu-toggled` event when its state changes. The `event.detail` object contains the new `expanded` state.
+
+<cn-menu id="event-menu">
+  <ul>
+    <li>
+      <a href="#">
+        <cn-icon xsmall noun="experiment"></cn-icon>
+        <span>Click me</span>
+      </a>
+    </li>
+  </ul>
+</cn-menu>
+<p><small>Menu is: <span id="menu-status">closed</span></small></p>
+
+<script>
+{`
+  const menu = document.getElementById('event-menu');
+  const status = document.getElementById('menu-status');
+  menu.addEventListener('menu-toggled', (e) => {
+    status.textContent = e.detail.expanded ? 'open' : 'closed';
+  });
+`}
+</script>
